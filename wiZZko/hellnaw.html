@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Valentine's Day</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css">
+  <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+  <div class="container">
+    <div class="banner-gif">
+      <img id="banner" src="https://media1.tenor.com/m/3qBJ83J991QAAAAC/question-mark-cat.gif" alt="banner"/>
+    </div>
+  
+  <h1 id="question">Will you be my valentine?</h1>
+  <button id="yes" class="button-53" role="button">Yes</button>
+  <button id="no">No</button>
+  <button id="hellnaw" class="glow-on-hover"  >HELL NAW</button>
+  <script>
+    var hellnawButton = document.getElementById("hellnaw");
+
+    hellnawButton.addEventListener("click", function() {
+      window.location.href = "https://www.youtube.com/watch?v=KOEfDvr4DcQ";
+    });
+  </script>
+  <div id="result"></div>
+  <canvas id="confetti"></canvas>
+  <script src="https://cdn.jsdelivr.net/npm/js-confetti@latest/dist/js-confetti.browser.js"></script>
+  <script src="./script.js"></script>
+
+  <script>
+    var yesButton = document.getElementById("yes");
+    var noButton = document.getElementById("no");
+    var resultDiv = document.getElementById("result");
+
+    yesButton.addEventListener("click", function() {
+      resultDiv.style.display = "block";
+      resultDiv.innerHTML = "<strong>Yay :3</strong>";
+      noButton.style.display = "none";
+      hellnawButton.style.display = "none";
+      yesButton.textContent = ("celebrate")
+
+      jsConfetti.addConfetti({
+        emojis: ['💘', '💓', '💖', '💝', '😁', ":3","😽"],
+      }).then(() => jsConfetti.addConfetti());
+      button.addEventListener('click', () => {
+    launchConfetti();
+});
+    });
+    
+  var yesButton = document.getElementById("yes");
+  var banner = document.getElementById("banner");
+
+  yesButton.addEventListener("click", function() {
+    banner.src = "https://i.imgflip.com/2tm0po.jpg";
+    banner.alt = "";
+  });
+
+    var noCount = 0;
+
+    noButton.addEventListener("click", function() {
+      noCount++;
+      if (noCount > 15) {
+        resultDiv.style.display = "block";
+        resultDiv.innerHTML = "<strong>You thought 😂</strong>";
+        noButton.style.display = "none";
+      } else {
+        var texts = ["WHY?", "huhh?", "POOKIE :(", "WHAY", "hell naw 🔴", "tf?", "не та кнопка", "що 😭", "😿", "2093##w?###h?##y?", "LUH KRANK ✈️🗼🗼"];
+        var randomIndex = Math.floor(Math.random() * texts.length);
+        resultDiv.style.display = "block";
+        resultDiv.innerHTML = texts[randomIndex];
+
+        var yesWidth = yesButton.offsetWidth;
+        var noWidth = noButton.offsetWidth;
+        yesButton.style.width = (yesWidth + 10) + "px";
+        noButton.style.width = (noWidth - 10) + "px";
+      }
+      function refreshBanner() {
+      let banner = document.getElementById('banner');
+      let src = banner.src;
+      banner.src = '';
+      banner.src = src;
+    }
+    });
+  
+  </script>
+</body>
+</html>
